@@ -1,0 +1,357 @@
+/* WithMe - Forest & Sage Design System */
+
+:root {
+  /* Forest Light Mode */
+  --color-forest-light-primary: #2D5016;
+  --color-forest-light-accent: #6B8E23;
+  --color-forest-light-bg: #F5F3EE;
+  --color-forest-light-text: #3E3E3E;
+  --color-forest-light-border: #D4C5B0;
+  --color-forest-light-surface: #FFFFFF;
+  
+  /* Forest Dark Mode */
+  --color-forest-dark-primary: #7CB342;
+  --color-forest-dark-accent: #A1D82F;
+  --color-forest-dark-bg: #1B2B1F;
+  --color-forest-dark-text: #E8E6E1;
+  --color-forest-dark-border: #3D5A2D;
+  --color-forest-dark-surface: #2A3E2A;
+  
+  /* Sage Light Mode */
+  --color-sage-light-primary: #8B9B7F;
+  --color-sage-light-accent: #A89968;
+  --color-sage-light-bg: #F9F7F4;
+  --color-sage-light-text: #4A4A4A;
+  --color-sage-light-border: #D9D0C3;
+  --color-sage-light-surface: #FFFFFF;
+  
+  /* Sage Dark Mode */
+  --color-sage-dark-primary: #C4D4B8;
+  --color-sage-dark-accent: #D4AF9A;
+  --color-sage-dark-bg: #2A2A26;
+  --color-sage-dark-text: #E8E6E1;
+  --color-sage-dark-border: #4A4A42;
+  --color-sage-dark-surface: #3A3A34;
+  
+  /* Default: Forest Light */
+  --primary: var(--color-forest-light-primary);
+  --accent: var(--color-forest-light-accent);
+  --bg: var(--color-forest-light-bg);
+  --text: var(--color-forest-light-text);
+  --border: var(--color-forest-light-border);
+  --surface: var(--color-forest-light-surface);
+  
+  /* Semantic Colors */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --info: #3B82F6;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Forest Light Theme */
+html[data-theme="forest-light"] {
+  --primary: var(--color-forest-light-primary);
+  --accent: var(--color-forest-light-accent);
+  --bg: var(--color-forest-light-bg);
+  --text: var(--color-forest-light-text);
+  --border: var(--color-forest-light-border);
+  --surface: var(--color-forest-light-surface);
+}
+
+/* Forest Dark Theme */
+html[data-theme="forest-dark"] {
+  --primary: var(--color-forest-dark-primary);
+  --accent: var(--color-forest-dark-accent);
+  --bg: var(--color-forest-dark-bg);
+  --text: var(--color-forest-dark-text);
+  --border: var(--color-forest-dark-border);
+  --surface: var(--color-forest-dark-surface);
+}
+
+/* Sage Light Theme */
+html[data-theme="sage-light"] {
+  --primary: var(--color-sage-light-primary);
+  --accent: var(--color-sage-light-accent);
+  --bg: var(--color-sage-light-bg);
+  --text: var(--color-sage-light-text);
+  --border: var(--color-sage-light-border);
+  --surface: var(--color-sage-light-surface);
+}
+
+/* Sage Dark Theme */
+html[data-theme="sage-dark"] {
+  --primary: var(--color-sage-dark-primary);
+  --accent: var(--color-sage-dark-accent);
+  --bg: var(--color-sage-dark-bg);
+  --text: var(--color-sage-dark-text);
+  --border: var(--color-sage-dark-border);
+  --surface: var(--color-sage-dark-surface);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography */
+h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-base);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Cards */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Input Fields */
+input, textarea {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--primary), 0.1);
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2, .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.p-md {
+  padding: var(--spacing-md);
+}
+
+.rounded {
+  border-radius: var(--radius-lg);
+}
+
+.shadow {
+  box-shadow: var(--shadow-md);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.3s ease;
+}

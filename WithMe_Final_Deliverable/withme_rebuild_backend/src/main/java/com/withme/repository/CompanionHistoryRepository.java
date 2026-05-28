@@ -1,0 +1,13 @@
+package com.withme.repository;
+
+import com.withme.model.CompanionHistory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CompanionHistoryRepository extends JpaRepository<CompanionHistory, Long> {
+    Page<CompanionHistory> findByUserIdOrderByCreatedAtDesc(Long userId, Pageable pageable);
+    void deleteByUserId(Long userId);
+}
