@@ -1,0 +1,92 @@
+.cd-page { display: flex; flex-direction: column; height: 100vh; }
+
+.cd-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.cd-back { padding: 6px; }
+.cd-header-info { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.cd-header-icon { width: 36px; height: 36px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.cd-header-name { font-size: 0.875rem; font-weight: 700; }
+.cd-header-desc { font-size: 0.6875rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+.cd-header-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
+/* Call overlay */
+.call-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200;
+}
+.call-content {
+  text-align: center;
+  padding: 40px 32px;
+  max-width: 400px;
+  width: 90%;
+}
+.call-icon-pulse {
+  color: var(--primary);
+  margin-bottom: 16px;
+  animation: pulse 2s ease-in-out infinite;
+}
+.call-desc { font-size: 0.875rem; color: var(--text-secondary); margin: 8px 0 24px; line-height: 1.5; }
+.call-actions { display: flex; gap: 10px; justify-content: center; margin-bottom: 12px; }
+
+/* Messages area */
+.cd-messages {
+  flex: 1; overflow-y: auto;
+  padding: 16px 20px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.msg-card { display: flex; flex-direction: column; gap: 10px; }
+.msg-header { display: flex; align-items: center; gap: 10px; }
+.msg-meta { display: flex; flex-direction: column; }
+.msg-author { font-size: 0.8125rem; font-weight: 600; color: var(--text); }
+.msg-time { font-size: 0.625rem; color: var(--text-tertiary); }
+.msg-text { font-size: 0.9375rem; color: var(--text); line-height: 1.55; }
+
+.msg-reactions { display: flex; gap: 6px; flex-wrap: wrap; }
+.reaction-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--r-full); padding: 5px 10px;
+  font-family: inherit; font-size: 0.75rem;
+  color: var(--text-secondary); cursor: pointer;
+  transition: all var(--t-fast);
+}
+.reaction-chip:hover { border-color: var(--primary); color: var(--primary); transform: scale(1.05); }
+.reaction-chip.active { background: var(--primary-muted); border-color: var(--primary); color: var(--primary); }
+
+/* Composer */
+.cd-composer {
+  padding: 10px 20px 12px;
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.cd-composer-row { display: flex; align-items: flex-end; gap: 8px; }
+.cd-input { flex: 1; }
+.cd-send { padding: 10px 14px; }
+.hidden-input { display: none; }
+
+.composer-attachment {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 10px;
+  background: var(--surface-bright); border-radius: var(--r-sm);
+  margin-bottom: 8px; font-size: 0.75rem; color: var(--text-secondary);
+}
+.composer-att-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.composer-att-remove { background: none; border: none; color: var(--text-tertiary); cursor: pointer; padding: 2px; }
+
+@media (max-width: 768px) {
+  .cd-page { height: calc(100vh - var(--bnav-h)); }
+  .cd-header { padding: 10px 12px; }
+  .cd-messages { padding: 12px; }
+  .cd-composer { padding: 8px 12px; }
+  .cd-header-desc { max-width: 120px; }
+}
